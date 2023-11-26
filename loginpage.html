@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0b3359;         
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #0b3359;         
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 7px 5px 31px 7px rgba(8, 0, 7, 14.1);
+            text-align: center;
+            width: 400px;
+        }
+
+        h1 {
+            color: #333;
+        }
+        
+
+        input[type="text"], input[type="email"], input[type="tel"] {
+            width: 70%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+       
+
+        input[type="submit"] {
+            background-color: #c3c5c6;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px 15px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #121212;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <h1>Login</h1> -->
+        <div>
+            <img src="/Logo.png" alt="">
+        </div>
+        <form id="login-form" onsubmit="return validateForm()">
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <br>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <br>
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+
+            // You can add more validation logic here
+
+            if (name.trim() === "" || email.trim() === "" || phone.trim() === "") {
+                alert("All fields are required!");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
